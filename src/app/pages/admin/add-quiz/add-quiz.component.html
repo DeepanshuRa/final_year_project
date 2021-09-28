@@ -1,0 +1,61 @@
+<mat-card>
+    <h1>Add New Quiz</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="addQuiz()">
+                    <!--title-->
+                    <mat-form-field class="w100" appearance="fill">
+                        <mat-label>Enter Title</mat-label>
+                        <input [(ngModel)]="quizData.title" type="text" matInput name="title" placeholder="Enter here" required>
+                    </mat-form-field>
+
+                    <!--descripton-->
+                    <mat-form-field class="w100" appearance="fill">
+                        <mat-label>Enter Description</mat-label>
+                        <textarea [(ngModel)]="quizData.description" type="text" matInput name="description" rows="5" placeholder="Enter Here"></textarea>
+                    </mat-form-field>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!--max marks-->
+                            <mat-form-field class="w100" appearance="fill">
+                                <mat-label>Maximum Marks</mat-label>
+                                <input [(ngModel)]="quizData.maxMarks" type="text" matInput name="maxMarks" rows="5" placeholder="Enter Here">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <!--no of questions-->
+                            <mat-form-field class="w100" appearance="fill">
+                                <mat-label>No Of Questions</mat-label>
+                                <input [(ngModel)]="quizData.noOfQuestions" type="text" matInput name="noOfQuestions" rows="5" placeholder="Enter Here">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <!-- active field -->
+                    <mat-slide-toggle [(ngModel)]="quizData.active" name="active" class="mt20" color="primary">
+                        Active
+                    </mat-slide-toggle>
+
+                    <br>
+                    <!-- category -->
+                    <mat-form-field appearance="fill" class="mt20 w100">
+                        <mat-label>Select Category</mat-label>
+                        <mat-select name="category" [(ngModel)]="quizData.category">
+                            <mat-option *ngFor="let c of categories" [value]="c">
+                                {{c.title}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button mat-raised-button color="primary">Add</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>

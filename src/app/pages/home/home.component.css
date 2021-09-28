@@ -1,0 +1,73 @@
+.home-screen {
+  background-image: url("https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZ3JhbW1lcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 91vh;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 200px;
+  margin-top: 15%;
+}
+
+.welcome-text {
+  font-size: 70px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  color: rgb(114, 114, 221);
+  animation: text 2s 1;
+}
+
+.start-here-button:hover {
+  background: rgb(95, 95, 228);
+  color: #fff;
+}
+
+.home-text {
+  font-weight: bold;
+  color: #f7e7ce;
+  font-family: cursive;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 5s steps(40, end), blink-caret 0.75s 1s infinite;
+}
+
+@keyframes text {
+  0% {
+    color: black;
+    margin-bottom: 40px;
+  }
+  30% {
+    letter-spacing: 25px;
+  }
+  75% {
+    letter-spacing: 11px;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(75, 214, 248);
+  }
+}

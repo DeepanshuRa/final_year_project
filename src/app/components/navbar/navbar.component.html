@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <span routerLink="/"><img src="../../../assets/logo2.png" alt="" class="logo-image"></span>
+    <span>3 in One Study</span>
+    <!-- <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon> Home
+    </a> -->
+    <span class="example-spacer"></span>
+    <a *ngIf="!isLoggedIn" [routerLink]="'login'" mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
+      Login
+    </a>
+    <a *ngIf="!isLoggedIn" [routerLink]="'signup'" mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon">
+      Register
+    </a>
+    <a *ngIf="isLoggedIn" routerLink="/admin/profile" mat-icon-button class="example-icon" style="margin-right: 50px;" aria-label="Example icon-button with share icon">
+      {{user.username}}
+    </a>
+    <a *ngIf="isLoggedIn" (click)="logout()" mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon">
+      Logout
+    </a>
+  </mat-toolbar>
